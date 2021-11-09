@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { UserLogin } from '../../models/UserLogin';
 import './LoginComponent.css';
 import { login } from '../../services/UsuarioService';
+import eventBus from '../Shared/EventBus';
 
 function LoginComponent() {
     const [usernameInput, setUsernameInput] = useState('');
@@ -24,7 +25,12 @@ function LoginComponent() {
             setPasswordInput('');
           }
         )
-      };
+    };
+
+    function emitUsername() {
+      console.log("Emitting username...");
+      eventBus.dispatch("username", { username: usernameInput });
+    }
     
     return(
         <div className="container">
@@ -39,7 +45,7 @@ function LoginComponent() {
                 <label>Password</label>
                 <input type="password" onChange={event => setPasswordInput(event.target.value)} value={passwordInput} />
 
-                <button type="submit">Send</button>
+                <button type="submit" onClick={emitUsername}>Send</button>
             </form>
         </div>
     );
