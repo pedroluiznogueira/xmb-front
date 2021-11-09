@@ -27,7 +27,7 @@ function App() {
   )
 }
 
-function PrivateOutlet() {
+export function PrivateOutlet() {
   const auth = isAuth();
   return auth ? <Outlet /> : <Navigate to="/login" />;
 }
