@@ -44,10 +44,10 @@ function CadastroComponent() {
                 <input type="text" onChange={event => setEmailInput(event.target.value)} value={emailInput}/>
 
                 <label>Password</label>
-                <input type="text" onChange={event => setPasswordInput(event.target.value)} value={passwordInput}/>
+                <input type="password" onChange={event => setPasswordInput(event.target.value)} value={passwordInput}/>
 
                 <label>Confirm Password</label>
-                <input type="text" onChange={event => setConfirmPasswordInput(event.target.value)} value={confirmPasswordInput}/>
+                <input type="password" onChange={event => setConfirmPasswordInput(event.target.value)} value={confirmPasswordInput}/>
 
                 <button type="submit">Send</button>
             </form>

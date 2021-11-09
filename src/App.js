@@ -20,7 +20,7 @@ function App() {
             <Route path='/aerodromes' element={<AerodromeComponent />} />
           </Route>
             <Route path='/login' element={<LoginComponent />} />
-          <Route path='/cadastro' element={<CadastroComponent />} />
+            <Route path='/cadastro' element={<CadastroComponent />} />
         </Routes>
       </main>
     </div>

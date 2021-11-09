@@ -26,7 +26,7 @@ function AerodromeComponent() {
           aerodrome =>
            <li className="container-li" key={aerodrome.name}>
              {aerodrome.name}
-          </li>
+           </li>
         )
        }
      </ul>
