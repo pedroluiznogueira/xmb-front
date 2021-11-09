@@ -10,38 +10,23 @@ function HeaderComponent() {
   }
 
   return (
-
-    <header className="header">
-      <div className="home">
-        <NavLink className="content" to='/home'>
-          Home
-        </NavLink>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink className="content" to='/aerodromes'>
-              Aerodromes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="content" to='/login'>
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="content" to='/cadastro'>
-              Cadastro
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="content" to='/login' onClick={handleOnClick}>
-              Logout
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <div className="sidenav">
+    <NavLink className="content" to='/home'>
+      Home
+    </NavLink>
+    <NavLink className="content" to='/aerodromes'>
+      Aerodromes
+    </NavLink>
+    <NavLink className="content" to='/login'>
+      Login
+    </NavLink>
+    <NavLink className="content" to='/cadastro'>
+      Cadastro
+    </NavLink>
+    <NavLink className="content" to='/login' onClick={handleOnClick}>
+      Logout
+    </NavLink>
+  </div>
   );
 };
 

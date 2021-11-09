@@ -11,7 +11,7 @@ import { isAuth } from './components/Auth/Auth';
 function App() {
 
   return(
-    <div>
+    <div className="container">
       <HeaderComponent />
       <main>
         <Routes>

@@ -19,6 +19,7 @@ function LoginComponent() {
 
         login(user).then(
           () => {
+            setUsernameInput('');
             setEmailInput('');
             setPasswordInput('');
           }

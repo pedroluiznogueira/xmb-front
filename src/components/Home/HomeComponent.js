@@ -19,7 +19,7 @@ class HomeComponent extends Component {
         
         // Update the formData object
         formData.append(
-            "json-file",
+            "file",
             this.state.selectedFile,
             this.state.selectedFile.name
         );
@@ -29,7 +29,7 @@ class HomeComponent extends Component {
         
         // Request made to the backend api
         // Send formData object
-        // axios.post("http://localhost:8080/uploadfile", formData);
+        axios.post("http://localhost:8080/upload-file", formData);
     };
 
     // File content to be displayed after
@@ -60,7 +60,7 @@ class HomeComponent extends Component {
     render() {
     
         return (
-            <div>
+            <div className="container">
                 <div>
                     <input type="file" onChange={this.onFileChange} />
                     <button onClick={this.onFileUpload}>
