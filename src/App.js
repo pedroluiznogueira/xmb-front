@@ -5,6 +5,8 @@ import CadastroComponent from './components/Cadastro/CadastroComponent';
 import HomeComponent from './components/Home/HomeComponent';
 
 import HeaderComponent from './components/Header/HeaderComponent';
+import { Navigate, Outlet } from 'react-router-dom';
+import { isAuth } from './components/Auth/Auth';
 
 function App() {
 
@@ -13,14 +15,21 @@ function App() {
       <HeaderComponent />
       <main>
         <Routes>
-          <Route path='/aerodromes' element={<AerodromeComponent />} />
-          <Route path='/login' element={<LoginComponent />} />
+          <Route path="/" element={<PrivateOutlet />}>
+            <Route path='/home' element={<HomeComponent />} />
+            <Route path='/aerodromes' element={<AerodromeComponent />} />
+          </Route>
+            <Route path='/login' element={<LoginComponent />} />
           <Route path='/cadastro' element={<CadastroComponent />} />
-          <Route path='/home' element={<HomeComponent />} />
         </Routes>
       </main>
     </div>
   )
+}
+
+function PrivateOutlet() {
+  const auth = isAuth();
+  return auth ? <Outlet /> : <Navigate to="/login" />;
 }
 
 export default App;
