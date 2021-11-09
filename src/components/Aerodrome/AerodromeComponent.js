@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAerodromes } from '../services/AerodromeService';
+import { getAerodromes } from '../../services/AerodromeService';
 
 function AerodromeComponent() {
   const [list, setList] = useState([]);
