@@ -1,0 +1,69 @@
+{
+  "aerodromes": [
+    {
+        "name": "Base Aérea Anapolis",
+        "city": "Anapolis",
+        "description": "",
+        "created_at": "14/10/1990",
+        "runways": [
+          {
+          "designation": "09/27",
+          "width": 40,
+          "length": 1026
+          }
+        ]
+    },
+    {
+        "name": "Aeródromo Aracaju",
+        "city": "Aracaju",
+        "description": "",
+        "created_at": "18/01/2002",
+        "runways": [
+          {
+          "designation": "11/25",
+          "width": 30,
+          "length": 805
+          }
+        ]
+    },
+    {
+        "name": "Aeroporto Internacional de Manaus",
+        "city": "Manaus",
+        "description": "",
+        "created_at": "10/08/1992",
+        "runways": [
+            {
+            "designation": "02/34",
+            "width": 40,
+            "length": 1500
+            }
+        ]
+    },
+    {
+        "name": "Aeródromo BH",
+        "city": "Belo Horizonte",
+        "description": "",
+        "created_at": "10/08/1992",
+        "runways": [
+            {
+            "designation": "15/16",
+            "width": 50,
+            "length": 1377
+            }
+        ]
+    },
+    {
+        "name": "Aeródromo JK",
+        "city": "Brasília",
+        "description": "",
+        "created_at": "10/08/1992",
+        "runways": [
+            {
+            "designation": "08/28",
+            "width": 40,
+            "length": 937
+            }
+        ]
+    }
+  ]
+}
