@@ -51,7 +51,7 @@ class HomeComponent extends Component {
             return (
                 <div>
                     <br/>
-                    <h4>Choose before Pressing the Upload button</h4>
+                    <h4>Upload button won't work if you don't select a file</h4>
                 </div>
             );
         }
@@ -60,11 +60,14 @@ class HomeComponent extends Component {
     render() {
     
         return (
-            <div className="container">
-                <div>
-                    <input type="file" onChange={this.onFileChange} />
+            <div className="container" className="main">
+                <div className="file-input">
+                <div class="file-input">
+                    <input className="file" id="file" type="file" onChange={this.onFileChange} />
+                    <label for="file">Select file</label>
+                </div>
                     <button onClick={this.onFileUpload}>
-                    Upload!
+                    Upload file
                     </button>
                 </div>
             {this.fileData()}
