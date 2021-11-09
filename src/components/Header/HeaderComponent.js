@@ -1,25 +1,30 @@
 import { NavLink } from 'react-router-dom';
-
-import classes from './HeaderComponent.module.css';
+import './HeaderComponent.css';
 
 function HeaderComponent() {
-  
+
   return (
-    <header className={classes.header}>
+
+    <header className="header">
+      <div className="home">
+        <NavLink className="content" to='/home'>
+          Home
+        </NavLink>
+      </div>
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName={classes.active} to='/aerodromes'>
+            <NavLink className="content" to='/aerodromes'>
               Aerodromes
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/login'>
+            <NavLink className="content" to='/login'>
               Login
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to='/cadastro'>
+            <NavLink className="content" to='/cadastro'>
               Cadastro
             </NavLink>
           </li>

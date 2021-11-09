@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAerodromes } from '../../services/AerodromeService';
+import './AerodromeComponent.css';
 
 function AerodromeComponent() {
   const [list, setList] = useState([]);
@@ -19,17 +20,17 @@ function AerodromeComponent() {
     <div className="wrapper">
 
      {/* get method */}
-     <ul>
+     <ul className="container-ul">
        {
         list.map(
           aerodrome =>
-           <li key={aerodrome.name}>
+           <li className="container-li" key={aerodrome.name}>
              {aerodrome.name}
           </li>
         )
        }
      </ul>
-   </div>
+    </div>
   )
 }
 

@@ -1,0 +1,28 @@
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-ul {
+    list-style: none;
+    font-family: 'Montserrat';
+}
+
+.container-li {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px; 
+    box-shadow: 5px 10px #aaaaaa;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

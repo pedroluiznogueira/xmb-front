@@ -1,0 +1,43 @@
+.header {
+  height: 60px;
+  background-color: #292929;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.home {
+  color: white;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.home:hover, .content:hover {
+  color: rgb(192, 192, 192);
+  text-decoration: underline;
+}
+
+.header ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.header nav {
+  margin-right: 50px;
+}
+
+.header ul li {
+  margin: 10px;
+}
+
