@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 500px;
+    width: 500px;
 }
 
 .file-input {
@@ -53,4 +55,7 @@ input:focus + label {
     outline: 1px solid #000;
     outline: -webkit-focus-ring-color auto 2px;
 }
+
+
+
 

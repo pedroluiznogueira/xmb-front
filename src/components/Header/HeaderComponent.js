@@ -39,9 +39,9 @@ class HeaderComponent extends Component {
         <NavLink className="content" to='/map'>
           Map
         </NavLink>
-        <NavLink className="content" to='/aerodromes'>
+        {/* <NavLink className="content" to='/aerodromes'>
           Aerodrome
-        </NavLink>
+        </NavLink> */}
         <NavLink className="content" to='/login'>
           Login
         </NavLink>

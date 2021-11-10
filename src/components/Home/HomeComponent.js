@@ -64,12 +64,12 @@ class HomeComponent extends Component {
                 <AerodromeComponent filename={this.state.selectedFile.name} />
             )
         }
-    };
+    };  
         
     render() {
     
         return (
-            <div className="container" className="main">
+            <div className="main">
                 <div className="file-input">
                 <div class="file-input">
                     <input className="file" id="file" type="file" onChange={this.onFileChange} />
@@ -79,7 +79,8 @@ class HomeComponent extends Component {
                     Upload file
                     </button>
                 </div>
-            {this.fileData()}
+                {/* {this.fileData()} */}
+                {this.aerodromeData()}
             </div>
         );
     }
