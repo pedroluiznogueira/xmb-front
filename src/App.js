@@ -30,35 +30,25 @@ function App() {
       center: [lng, lat],
       zoom: zoom,
     });
+
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
   });
 
   return (
-    // <div className="container">
-    //   {/* <HeaderComponent />
-    //   <main>
-    //     <Routes>
-    //       <Route path="/" element={<PrivateOutlet />}>
-    //         <Route path="/home" element={<HomeComponent />} />
-    //         <Route path="/aerodromes" element={<AerodromeComponent />} />
-    //         <Route path="/map" element={<MapComponent />} />
-    //       </Route>
-    //       <Route path="/login" element={<LoginComponent />} />
-    //       <Route path="/cadastro" element={<CadastroComponent />} />
-    //     </Routes>
-    //   </main> */}
-    // </div>
     <>
       <HeaderComponent />
       <div>
+        <div className="sidebar">
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div>
         <div ref={mapContainer} className="map-container" />
       </div>
     </>
   );
-}
-
-export function PrivateOutlet() {
-  const auth = isAuth();
-  return auth ? <Outlet /> : <Navigate to="/login" />;
 }
 
 export default App;
