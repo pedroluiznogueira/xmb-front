@@ -76,7 +76,7 @@ class HomeComponent extends Component {
                     <label for="file">Select file</label>
                 </div>
                     <button onClick={this.onFileUpload}>
-                    Upload file
+                        Upload
                     </button>
                 </div>
                 {/* {this.fileData()} */}

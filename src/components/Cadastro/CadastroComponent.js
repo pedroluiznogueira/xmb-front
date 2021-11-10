@@ -12,7 +12,12 @@ function CadastroComponent() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
+        if (passwordInput != confirmPasswordInput) {
+          alert("Password and password confirmation must be exactly the same") 
+          return;
+        }
+        
         let user = new User();
 
         user.name = nameInput;
@@ -32,8 +37,8 @@ function CadastroComponent() {
       };
     
     return(
-        <div className="container">
-            <form className="container" onSubmit={handleSubmit}>
+        <div className="main">
+            <form className="main" onSubmit={handleSubmit}>
                 <label>Name</label>
                 <input type="text" onChange={event => setNameInput(event.target.value)} value={nameInput}/>
 
