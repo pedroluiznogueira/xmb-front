@@ -25,6 +25,7 @@ ReactDOM.render(
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/cadastro" element={<CadastroComponent />} />
         <Route path="/map" element={<App />} />
+        <Route path="/mapview" element={<MapComponent />} />
       </Routes>
     </BrowserRouter>
   </>,

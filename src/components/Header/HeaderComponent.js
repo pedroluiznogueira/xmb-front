@@ -39,6 +39,9 @@ class HeaderComponent extends Component {
         <NavLink className="content" to='/map'>
           Map
         </NavLink>
+        <NavLink className="content" to='/mapview'>
+          Mapview
+        </NavLink>
         {/* <NavLink className="content" to='/aerodromes'>
           Aerodrome
         </NavLink> */}

@@ -12,7 +12,7 @@ import { isAuth } from "./components/Auth/Auth";
 import MapComponent from "./components/Map/MapComponent";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoicGVkcm9sdWl6bm9ndWVpcmEiLCJhIjoiY2t2c3ZnM2EyMDBjcDJ1bzZhN29mZWNxMSJ9.NXKHYyTqaV3KF2YXtOFUAA";
+  'pk.eyJ1IjoicGVkcm9sdWl6bm9ndWVpcmEiLCJhIjoiY2t2c3ZnM2EyMDBjcDJ1bzZhN29mZWNxMSJ9.NXKHYyTqaV3KF2YXtOFUAA';
 
 function App() {
   const mapContainer = useRef(null);
