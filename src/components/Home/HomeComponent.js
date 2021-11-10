@@ -1,6 +1,7 @@
 import './HomeComponent.css';
 import axios from 'axios';
 import React,{Component} from 'react';
+import AerodromeComponent from '../Aerodrome/AerodromeComponent';
 
 class HomeComponent extends Component {
 
@@ -54,6 +55,14 @@ class HomeComponent extends Component {
                     <h4>Upload button won't work if you don't select a file</h4>
                 </div>
             );
+        }
+    };
+
+    aerodromeData = () => {
+        if (this.state.selectedFile) {
+            return(
+                <AerodromeComponent filename={this.state.selectedFile.name} />
+            )
         }
     };
         

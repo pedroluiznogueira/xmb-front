@@ -30,14 +30,17 @@ class HeaderComponent extends Component {
   render() {
     return (
       <div className="sidenav">
-          <NavLink className="content" to=''>
-            {this.state.username}
-          </NavLink>
+        <NavLink className="content" to=''>
+          {this.state.username}
+        </NavLink>
         <NavLink className="content" to='/home'>
           Home
         </NavLink>
+        <NavLink className="content" to='/map'>
+          Map
+        </NavLink>
         <NavLink className="content" to='/aerodromes'>
-          Aerodromes
+          Aerodrome
         </NavLink>
         <NavLink className="content" to='/login'>
           Login

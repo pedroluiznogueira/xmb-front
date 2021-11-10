@@ -7,6 +7,7 @@ import HomeComponent from './components/Home/HomeComponent';
 import HeaderComponent from './components/Header/HeaderComponent';
 import { Navigate, Outlet } from 'react-router-dom';
 import { isAuth } from './components/Auth/Auth';
+import MapComponent from './components/Map/MapComponent';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<PrivateOutlet />}>
             <Route path='/home' element={<HomeComponent />} />
             <Route path='/aerodromes' element={<AerodromeComponent />} />
+            <Route path='/map' element={<MapComponent />} />            
           </Route>
             <Route path='/login' element={<LoginComponent />} />
             <Route path='/cadastro' element={<CadastroComponent />} />

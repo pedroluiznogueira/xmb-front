@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAerodromes } from '../../services/AerodromeService';
 import './AerodromeComponent.css';
 
-function AerodromeComponent() {
+function AerodromeComponent(props) {
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ function AerodromeComponent() {
 
   return(
     <div className="wrapper">
+      {props.filename}
 
      {/* get method */}
      <ul className="container-ul">
@@ -26,7 +27,7 @@ function AerodromeComponent() {
           aerodrome =>
            <li className="container-li" key={aerodrome.name}>
              {aerodrome.name}
-           </li>
+          </li>
         )
        }
      </ul>
