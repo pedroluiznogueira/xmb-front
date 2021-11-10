@@ -1,63 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import { User } from '../../models/User';
-import { registrate } from '../../services/UsuarioService';
-import './CadastroComponent.css';
+import React, { useEffect, useState } from "react";
+import { User } from "../../models/User";
+import { registrate } from "../../services/UsuarioService";
+import "./CadastroComponent.css";
+import HeaderComponent from "../Header/HeaderComponent";
 
 function CadastroComponent() {
-    const [nameInput, setNameInput] = useState('');
-    const [surnameInput, setSurnameInput] = useState('');
-    const [emailInput, setEmailInput] = useState('');
-    const [passwordInput, setPasswordInput] = useState('');
-    const [confirmPasswordInput, setConfirmPasswordInput] = useState('');
+  const [nameInput, setNameInput] = useState("");
+  const [surnameInput, setSurnameInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (passwordInput != confirmPasswordInput) {
-          alert("Password and password confirmation must be exactly the same") 
-          return;
-        }
-        
-        let user = new User();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        user.name = nameInput;
-        user.surname = surnameInput;
-        user.email = emailInput;
-        user.password = passwordInput;
+    if (passwordInput != confirmPasswordInput) {
+      alert("Password and password confirmation must be exactly the same");
+      return;
+    }
 
-        registrate(user).then(
-          () => {
-            setNameInput('');
-            setSurnameInput('');
-            setEmailInput('');
-            setPasswordInput('');
-            setConfirmPasswordInput('');
-          }
-        )
-      };
-    
-    return(
-        <div className="main">
-            <form className="main" onSubmit={handleSubmit}>
-                <label>Name</label>
-                <input type="text" onChange={event => setNameInput(event.target.value)} value={nameInput}/>
+    let user = new User();
 
-                <label>Surname</label>
-                <input type="text" onChange={event => setSurnameInput(event.target.value)} value={surnameInput}/>
+    user.name = nameInput;
+    user.surname = surnameInput;
+    user.email = emailInput;
+    user.password = passwordInput;
 
-                <label>Email</label>
-                <input type="text" onChange={event => setEmailInput(event.target.value)} value={emailInput}/>
+    registrate(user).then(() => {
+      setNameInput("");
+      setSurnameInput("");
+      setEmailInput("");
+      setPasswordInput("");
+      setConfirmPasswordInput("");
+    });
+  };
 
-                <label>Password</label>
-                <input type="password" onChange={event => setPasswordInput(event.target.value)} value={passwordInput}/>
+  return (
+    <>
+      <HeaderComponent />
+      <div className="main">
+        <form onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input
+            type="text"
+            onChange={(event) => setNameInput(event.target.value)}
+            value={nameInput}
+          />
 
-                <label>Confirm Password</label>
-                <input type="password" onChange={event => setConfirmPasswordInput(event.target.value)} value={confirmPasswordInput}/>
+          <label>Surname</label>
+          <input
+            type="text"
+            onChange={(event) => setSurnameInput(event.target.value)}
+            value={surnameInput}
+          />
 
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    );
+          <label>Email</label>
+          <input
+            type="text"
+            onChange={(event) => setEmailInput(event.target.value)}
+            value={emailInput}
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            onChange={(event) => setPasswordInput(event.target.value)}
+            value={passwordInput}
+          />
+
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            onChange={(event) => setConfirmPasswordInput(event.target.value)}
+            value={confirmPasswordInput}
+          />
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default CadastroComponent;
