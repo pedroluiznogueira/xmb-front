@@ -5,6 +5,7 @@ import CadastroComponent from "./components/Cadastro/CadastroComponent";
 import HomeComponent from "./components/Home/HomeComponent";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
+import './App.css';
 
 import HeaderComponent from "./components/Header/HeaderComponent";
 import { Navigate, Outlet } from "react-router-dom";
@@ -41,7 +42,7 @@ function App() {
   return (
     <>
       <HeaderComponent />
-      <div>
+      <div className="map-content">
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>

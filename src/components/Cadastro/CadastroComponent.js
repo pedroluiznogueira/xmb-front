@@ -38,7 +38,7 @@ function CadastroComponent() {
   return (
     <>
       <HeaderComponent />
-      <div className="main">
+      <div className="container">
         <form onSubmit={handleSubmit}>
           <label>Name</label>
           <input

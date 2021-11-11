@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import Geocoder from 'react-mapbox-gl-geocoder';
 import { Container, Col, Row, Button } from 'reactstrap';
+import HeaderComponent from "../Header/HeaderComponent";
+import './MapComponent.css';
+import { NavLink, Navigate } from 'react-router-dom';
 
 const mapStyle = {
     width: '100%',
@@ -66,13 +69,16 @@ class MapComponent extends PureComponent {
   render() {
     const { viewport, tempMarker, markers } = this.state;
     return(
-      <Container fluid={true}>
+      <>
+        <HeaderMap />
+        <div clssName="content">
+        <Container fluid={true} >
         <Row>
-          <Col><h2>Mapbox Tutorial</h2></Col>
+          <Col></Col>
         </Row>
         <Row className="py-4">
-          <Col xs={2}>
-            <Geocoder
+          <Col className="input" xs={2}>
+            <Geocoder className="input-geo"
                 mapboxApiAccessToken={mapboxApiKey}
                 onSelected={this.onSelected}
                 viewport={viewport}
@@ -81,8 +87,8 @@ class MapComponent extends PureComponent {
                 queryParams={params}
             />
           </Col>
-          <Col>
-           <Button color="primary" onClick={this.add}>Add</Button>
+          <Col className="input">
+           <Button className="button" color="primary" onClick={this.add}>Add</Button>
           </Col>
         </Row>
         <Row>
@@ -116,8 +122,41 @@ class MapComponent extends PureComponent {
           </Col>
         </Row>
       </Container>
+        </div>
+        </>
    );
   }
+}
+
+export function HeaderMap() {
+
+  function handleOnClick() {
+    window.sessionStorage.clear();
+    <Navigate to="/login" />
+  }
+
+  return(
+    <div className="navbar">
+        <NavLink className="content-header" to='/home'>
+          Home
+        </NavLink>
+        <NavLink className="content-header" to='/map'>
+          Map
+        </NavLink>
+        <NavLink className="content-header" to='/mapview'>
+          Mapview
+        </NavLink>
+        <NavLink className="content-header" to='/login'>
+          Login
+        </NavLink>
+        <NavLink className="content-header" to='/cadastro'>
+          Cadastro
+        </NavLink>
+        <NavLink className="content-header" to='/login' onClick={handleOnClick}>
+          Logout
+        </NavLink>
+      </div>
+  );
 }
 
 export default MapComponent;

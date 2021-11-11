@@ -21,11 +21,11 @@ ReactDOM.render(
         <Route path="/" element={<PrivateOutlet />}>
           <Route path="/home" element={<HomeComponent />} />
           <Route path="/aerodromes" element={<AerodromeComponent />} />
+          <Route path="/map" element={<App />} />
+          <Route path="/mapview" element={<MapComponent />} />
         </Route>
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/cadastro" element={<CadastroComponent />} />
-        <Route path="/map" element={<App />} />
-        <Route path="/mapview" element={<MapComponent />} />
       </Routes>
     </BrowserRouter>
   </>,
